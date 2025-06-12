@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz Dia dos Namorados ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffdce0, #fff6f7);
+      overflow: hidden;
+      position: relative;
+      color: #c62828;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 2.5rem;
+    }
+    .contador {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    .mensagem {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff0f1;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Ana e Gabriel❤️</h1>
+  <div class="contador" id="contador"></div>
+  <div class="mensagem">
+Oi, amor 💕
+Hoje é o nosso primeiro Dia dos Namorados juntos, e eu não poderia deixar de falar o quanto você é especial pra mim, são 9 meses ao seu lado, vivendo tudo que nos aconteceu e que começou pela tela, mas que é tão real quanto qualquer outro relacionamento.
+
+Mesmo agente tendo um relacionamento a distância , eu me sinto super unido a você meu amor, cada conversa que agente tem, nossas ligações todo dia, até os nossos mais simples “boa noite” me faz ter mais certeza de que é com você que eu quero estar o resto da minha vida meu amor, você é tudo pra mim, a definição de perfeição em pessoa é você, e não tem palavras que eu possa descrever o quanto você é incrível meu amor.
+
+A gente pode até não ter se visto pessoalmente ainda, mas sei que oque agente tem é de verdade, eu sou muito grato por tudo que vivemos até aqui, cada momento junto com você é muito especial pra mim meu amor, poder te ver sorrindo com esse sorriso maravilhoso, ouvir sua risada, ouvir em call os seus “Vidaa amoor voltei”, tudo isso me trás sensações maravilhosas meu amor, eu te amo de uma maneira tão grande, você significa dmais pra mim amor, eu te amo mais doque eu poderia amar qualquer coisa, e sentir sua presença, mesmo de tão longe, me trás mais felicidade do que a que eu jamais senti em qualquer outro momento.
+
+Feliz Dia dos Namorados pra nós minha neném, que esse seja o primeiro de muitos que vamos passar juntos, e que lógo a gente possa viver tudo isso pertinho um do outro, e fazer as coisas do jeito que a gente sonha e tanto esperamos por esse tempo.
+
+Eu te amo demais minha pequena obrigado por tudo princesa ❤️🥰
+  </div>
+  <script>
+    const inicioNamoro = new Date("2024-09-10T00:00:00");
+    function atualizarContador() {
+      const agora = new Date();
+      const diff = agora - inicioNamoro;
+      const minutos = Math.floor(diff / 1000 / 60);
+      const dias = Math.floor(minutos / 60 / 24);
+      const meses = Math.floor(dias / 30.44);
+      document.getElementById("contador").innerText =
+        `Juntos há ${meses} meses, ${dias} dias e ${minutos} minutos 💖`;
+    }
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    // Corações caindo
+    function criarCoracao() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(criarCoracao, 300);
+  </script>
+</body>
+</html>
